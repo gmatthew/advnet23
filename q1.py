@@ -151,13 +151,9 @@ for tick in range(0, 60000):
     do_flow_transfer(sim_time)
     sim_time += 1
 
-    # flow_table.print_table()
-    # if (tick % 1000 == 0):
-    #     print_stats(sim_time)
-    print(sim_time)
-
 flow_table.print_table()
-# Next 25 minutes
+
+
 mouse_count = 0
 
 while (mouse_count < 300):
@@ -168,25 +164,15 @@ while (mouse_count < 300):
     # transfer all flows that are in the table
     do_flow_transfer(sim_time)
     
-    # if (sim_time > 79):
-    #     exit(0)
-
     sim_time += 1
-    print(sim_time)
 
-    # if (sim_time % 1000 == 0):
-    #     print_stats(sim_time)
-
-    # flow_table.print_table()
 
 while (flow_table.get_active_flow_count() > 0):
     do_flow_transfer(sim_time)
     sim_time += 1
 
-    if (sim_time % 1000 == 0):
-        print_stats(sim_time)
 
-    flow_table.print_table()
+    # flow_table.print_table()
 
 print_stats(sim_time)
 
